@@ -1,0 +1,281 @@
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInBody 1s ease-in-out;
+}
+
+/* Fade-in Animation for Body */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container to Hold Everything */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: slideUpContainer 1s ease-in-out;
+}
+
+/* Slide-Up Animation for Form Container */
+@keyframes slideUpContainer {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Form Title Styling */
+h1 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #0072ff;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInTitle 1s ease forwards;
+}
+
+/* Title Fade-in Animation */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styling */
+form {
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInForm 1.2s ease forwards;
+}
+
+/* Form Slide-In Animation */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fieldset Styling */
+fieldset {
+    border: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 114, 255, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Fieldset Hover Effect */
+fieldset:hover {
+    background-color: #eef7ff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 114, 255, 0.2);
+}
+
+/* Label and Input Styling */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #0072ff;
+    outline: none;
+    background-color: #e6f7ff;
+    box-shadow: 0 0 10px rgba(0, 114, 255, 0.3);
+}
+
+/* Button with Hover Effect and Ripple Animation */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 198, 255, 0.4);
+}
+
+/* Ripple Effect on Button */
+button::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Resume Display Styling */
+#resume-display {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInResume 1s ease forwards;
+}
+
+/* Resume Section Slide-Up Animation */
+@keyframes fadeInResume {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Resume Heading */
+#resume-display h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #0072ff;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+/* Subheadings and Paragraphs in Resume */
+#resume-display h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s 0.2s forwards;
+}
+
+#resume-display p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s 0.4s forwards;
+}
+
+/* Slide-up Fade-in Animation for Text */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container, #resume-display {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    #resume-display h2 {
+        font-size: 30px;
+    }
+
+    #resume-display h3 {
+        font-size: 20px;
+    }
+
+    #resume-display p {
+        font-size: 14px;
+    }
+}
