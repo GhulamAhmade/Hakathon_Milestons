@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Resume Builder with Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form id="resumeForm" enctype="multipart/form-data">
+        <h2>Fill Out Your Details (Dynamic Resume Builder with Form)</h2>
+
+        <!-- Name (Letters only, min 3 characters) -->
+        <div class="input-field">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" minlength="3" maxlength="50"
+            required />
+        </div>
+
+        <!-- Phone (Only digits, 10-15 characters) -->
+        <div class="input-field">
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone" name="phone" placeholder="Enter your phone number" pattern="\d+" minlength="10"
+            maxlength="15" title="Phone number can only contain digits (10-15 digits)" required />
+        </div>
+
+        <!-- Email (Handled by type="email") -->
+        <div class="input-field">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+        </div>
+
+        <!-- Education (Letters and numbers, max length) -->
+        <div class="input-field">
+          <label for="education">Education:</label>
+          <input type="text" id="education" name="education" placeholder="Enter your highest qualification" maxlength="100" 
+            required />
+        </div>
+
+        <!-- Career Objective (Max 500 characters) -->
+        <div class="input-field">
+          <label for="career-objective">Career Objective:</label>
+          <textarea id="career-objective" name="career-objective" rows="4" maxlength="500"
+            placeholder="Describe your career goals (max 500 characters)" required></textarea>
+        </div>
+
+        <!-- Skills (Alphanumeric, commas allowed) -->
+        <div class="input-field">
+          <label for="skills">Skills (separate with commas):</label>
+          <input type="text" id="skills" name="skills" placeholder="e.g., HTML, CSS, JavaScript"
+            pattern="[A-Za-z0-9,\s:]+" maxlength="200"
+            title="Skills can only contain letters, numbers, commas, and spaces" required />
+        </div>
+
+        <!-- Certifications (Alphanumeric, max length) -->
+        <div class="input-field">
+          <label for="certifications">Certifications (separate with commas, Use Bold Text in "Double Quotation"):</label>
+          <input type="text" id="certifications" name="certifications"
+            placeholder="e.g., AI Certification, Web Dev Course" maxlength="200"
+            required />
+        </div>
+
+        <!-- Work Experience (Alphanumeric, commas allowed) -->
+        <div class="input-field">
+          <label for="work-experience">Work Experience (separate with commas, Use Bold Text in "Double Quotation"):</label>
+          <input type="text" id="work-experience" name="work-experience" placeholder="e.g., Developer at Company A"
+            pattern="[A-Za-z0-9,\s-();:]+" maxlength="300"
+            title="Work experience can only contain letters, numbers, commas, and spaces and ;:" required />
+        </div>
+
+        <!-- Profile Picture (Accept only images) -->
+        <div class="input-field">
+          <label for="profile-pic">Profile Picture:</label>
+          <input type="file" id="profile-pic" name="profile-pic" accept="image/*" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Generate Resume</button>
+      </form>
+
+    </div>
+
+    <!-- Resume Container -->
+    <div id="resumeContainer" class="resume-container hidden">
+      <div class="left-section">
+        <img src="" alt="Profile Picture" class="profile-picture" id="resumeImage" />
+        <section id="objective">
+          <h3 style="color: white">Career Objective</h3>
+          <p id="resumeObjective" style="text-align: justify; hyphens: auto"></p>
+        </section>
+        <section id="certification">
+          <h3 style="color: white;">Certifications</h3>
+          <ul id="resumeCertifications"></ul>
+        </section>
+      </div>
+      <div class="right-section">
+        <h1>Dynamic Resume Builder</h1>
+        <section id="personal-info">
+          <h3>Personal Information</h3>
+          <p><b>Name:</b> <span id="resumeName"></span></p>
+          <p><b>Phone Number:</b> <span id="resumePhone"></span></p>
+          <p><b>Email:</b> <a href="#" id="resumeEmail"></a></p>
+        </section>
+        <section id="education-section">
+          <h3>Education</h3>
+          <p><span id="resumeEducation"></span></p>
+        </section>
+        <h3>Skills</h3>
+        <section id="skills-section">
+          <ul id="resumeSkills"></ul>
+        </section>
+        <h3>Work Experience</h3>
+        <section id="experience-section">
+          <ul id="resumeExperience"></ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
